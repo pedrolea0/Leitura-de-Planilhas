@@ -21,7 +21,7 @@ ptc_inatividade = tabela["Inatividade 12m"].value_counts(normalize=True).round(2
 
 #display (ptc_categoria, ptc_inatividade)
 
-for i, coluna in enumerate(tabela.columns):
+for i, coluna in enumerate(tabela.columns) :
     fig = px.histogram(tabela, x=coluna, color="Categoria")
     nome_arquivo = f"grafico_{i}_{coluna}.html"
     fig.write_html(nome_arquivo, auto_open=False)
