@@ -21,13 +21,13 @@ ptc_inatividade = tabela["Inatividade 12m"].value_counts(normalize=True).round(2
 
 #display (ptc_categoria, ptc_inatividade)
 
+for i, coluna in enumerate(tabela.columns):
+    fig = px.histogram(tabela, x=coluna, color="Categoria")
+    nome_arquivo = f"grafico_{i}_{coluna}.html"
+    fig.write_html(nome_arquivo, auto_open=False)
+    print(f"Salvo: {nome_arquivo}")
 
- for coluna in tabela.columns:  #for em tabela percorre a coluna para percorrer a lnha é tabela.index
-   fig = px.histogram(tabela, x=coluna, color="Categoria") #histogram é o tipo de grafico, x é o eixo x msm e color é o filtro q quer passar
-   #grafico.show() #.show pra mostrar o grafico
-   fig.write_html("grafico.html")
 
-# escreve os graficos em um arquivo html
 
 
 
